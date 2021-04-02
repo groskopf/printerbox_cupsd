@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+  server:
+    image: ${CUPS_IMAGE}
+    ports:
+      - "631:631/tcp"
+      - "631:631/udp"
+    environment:
+      - CUPS_USER_ADMIN=${CUPS_USER_ADMIN}
+      - CUPS_USER_PASSWORD=${CUPS_USER_PASSWORD}  
+    volumes:
+      - ./data/cups:/etc/cups
+      - ./data/logs:/var/log/cups
+      - ./data/spool:/var/spool/cups
+      - ./data/cache:/var/cache/cups
+    privileged: true
+    restart: always
