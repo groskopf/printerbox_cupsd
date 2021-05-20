@@ -9,7 +9,7 @@ sleep 2
 PRINTER_SERIAL=$(lsusb -v -d 04f9:20b9 2>/dev/null | grep iSerial | awk '{print $3}')
 
 #Add printer
-lpadmin -p TD4550DNWB -E -v usb://Brother/TD-4520DN?serial=${PRINTER_SERIAL} -P /usr/share/cups/model/Brother/brother_td4550dnwb_printer_en.ppd
+lpadmin -p TD4550DNWB -E -v usb://Brother/TD-4520DN?serial=${PRINTER_SERIAL} -P /etc/cups/ppd/TD4550DNWB.ppd
 lpstat -a
 cancel -a
 
