@@ -3,6 +3,8 @@ set -x
 
 read -p "WARNING: Connect and turn on printer before coninueing. Hit enter!"
 
+mkdir labels
+
 docker_image_name=printerbox_cupsd
 docker_image_version=v1
 docker_image=$docker_image_name:$docker_image_version
