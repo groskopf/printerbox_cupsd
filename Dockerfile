@@ -43,9 +43,6 @@ RUN sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf && 
 ENV CUPS_USER_ADMIN pi
 ENV CUPS_USER_PASSWORD pi
 
-# Test label
-ADD label.pdf label.pdf
-
 # Start script
 #ENTRYPOINT /scripts/start_cupsd.sh
 #ENTRYPOINT /bin/bash
