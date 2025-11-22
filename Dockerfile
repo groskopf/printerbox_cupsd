@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y \
     cups-bsd \
     cups-client \
     cups-filters \
-    python-cups \
+    python3-cups \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
